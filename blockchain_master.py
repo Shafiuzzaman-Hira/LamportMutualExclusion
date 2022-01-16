@@ -13,10 +13,10 @@ while True:
     conn, address = sock.accept()
     print('Connected by', address)
     try:
-            data = conn.recv(1024)
-            if not data:
-                break
-            conn.sendall(data)
+        request = conn.recv(1024)
+        response = "$10" + str(request)
+        res = bytes(response, 'utf-8')
+        conn.sendall(res)
 
     finally:
         conn.close()
