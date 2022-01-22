@@ -63,9 +63,9 @@ while True:
         if granted_request == 1:
             print("Client " + str(client_id) + " is proceeding to blockchain")
             add_transaction(client_id)
-        released_done = client1_release(constants.HOST, peer_clients)
-        if released_done == 1:
-            continue
+            released_done = client1_release(constants.HOST, peer_clients)
+            if released_done == 1:
+                continue
     elif client_id == 2:
         port = constants.CLIENT2_PORT
         peer_clients = [constants.CLIENT1_PORT, constants.CLIENT3_PORT]
